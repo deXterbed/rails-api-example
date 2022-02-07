@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :article do
-    title { "Sample article" }
-    content { "Sample content" }
-    slug { "sample-article" }
+    title {|n| "Sample article #{n}" }
+    content {|n| "Sample content #{n}" }
+    slug { title.split(' ').join('-') }
   end
 end
